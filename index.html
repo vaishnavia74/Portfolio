@@ -61,7 +61,7 @@
   .scroll-line::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--yellow); animation: slideline 2s infinite; }
   @keyframes slideline { 0% { left: -100%; } 100% { left: 100%; } }
 
-  section { padding: 120px 60px; }
+  section { padding: 100px 60px; }
   .section-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
   .section-label::before { content: ''; width: 20px; height: 1px; background: var(--yellow); }
   .section-title { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 5rem); letter-spacing: 2px; line-height: 1; margin-bottom: 60px; }
@@ -152,7 +152,11 @@
     letter-spacing: 1px;
     color: var(--yellow);
   }
-
+  .footer-logo {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  
   #skills { background: var(--black); }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .skill-card { background: var(--gray); padding: 40px 36px; border: 1px solid rgba(255,255,255,0.04); transition: background 0.3s, transform 0.3s; position: relative; overflow: hidden; }
@@ -176,7 +180,7 @@
   .proj-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.85); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; opacity: 0; transform: translateY(8px); transition: all 0.35s ease; }
   .proj-card:hover .proj-overlay { opacity: 1; transform: translateY(0); }
   .proj-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 6px; }
-  .proj-name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 10px; }
+  .proj-name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 10px; color:white; }
   .proj-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
   .proj-link { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); text-decoration: none; display: flex; align-items: center; gap: 8px; }
   .proj-link::after { content: '→'; transition: transform 0.2s; }
@@ -268,12 +272,12 @@
 <!-- HERO -->
 <section id="home">
   <div class="hero-left">
-    <div class="hero-tag">UI/UX Designer</div>
+    <div class="hero-tag">UI/Web Designer</div>
     <div class="hero-name">
       <div class="outline">MY NAME IS</div>
       <div class="filled">ATMAKURU VAISHNAVI</div>
     </div>
-    <div class="hero-role">I'M A UI DESIGNER</div>
+    <div class="hero-role">I'M A UI/Web DESIGNER</div>
     <p class="hero-desc">Designing clean, user-friendly digital experiences — where research meets pixel-perfect execution.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Work</a>
@@ -312,22 +316,26 @@
 <div class="ticker-wrap">
   <div class="ticker">
     <span class="ticker-item">UI Design</span>
-    <span class="ticker-item">UX Research</span>
+    <span class="ticker-item">Web Design</span>
+    <!-- <span class="ticker-item">UX Research</span> -->
     <span class="ticker-item">Figma</span>
     <span class="ticker-item">Prototyping</span>
     <span class="ticker-item">Wireframing</span>
     <span class="ticker-item">Responsive Design</span>
+    <span class="ticker-item">WordPress</span>
     <span class="ticker-item">UI Design</span>
-    <span class="ticker-item">UX Research</span>
+    <span class="ticker-item">Web Design</span>
+    <!-- <span class="ticker-item">UX Research</span> -->
     <span class="ticker-item">Figma</span>
     <span class="ticker-item">Prototyping</span>
     <span class="ticker-item">Wireframing</span>
     <span class="ticker-item">Responsive Design</span>
+    <span class="ticker-item">WordPress</span>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" style="padding: 100px 105px;">
   <!-- <div class="about-grid">   </div> -->
     <!-- <div class="about-img-wrap reveal">
       <div class="about-img-box">V</div>
@@ -336,14 +344,14 @@
     <div class="about-text reveal">
       <div class="section-label">Who am I</div>
       <h2 class="section-title" style="margin-bottom:28px;">HELLO.</h2>
-      <p>I'm <strong>Vaishnavi</strong>, a UI designer with a strong foundation in frontend logic. I bridge the gap between <strong>aesthetics</strong> and <strong>functionality—creating digital experiences</strong> that are intuitive, <strong>pixel-perfect,</strong> and built for seamless developer handoff.</p>
-      <p>I specialize in <strong>UI Design and Responsive Systems.</strong> My background in development means I design with implementation in mind—I <strong>deliver layouts</strong> that are technically sound and ready for production, ensuring there are no 'impossible' specs or design-dev gaps."</p>
+      <p>I'm <strong>Vaishnavi</strong>, a UI/Web designer with a strong foundation in frontend logic. I bridge the gap between <strong>aesthetics</strong> and <strong>functionality—creating digital experiences</strong> that are intuitive, <strong>pixel-perfect,</strong> and built for seamless developer handoff.</p>
+      <p>I specialize in <strong>UI Design, Web Design and Responsive Systems.</strong> My background in development means I design with implementation in mind—I <strong>deliver layouts</strong> that are technically sound and ready for production, ensuring there are no 'impossible' specs or design-dev gaps."</p>
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div class="tl-content">
             <div class="tl-year">2024 — Started Learning</div>
-            <div class="tl-text">Discovered UI/UX design. Dived into Figma, design principles, and UX fundamentals.</div>
+            <div class="tl-text">Discovered UI/UX design. Dived into Figma, UI design principles, and fundamentals.</div>
           </div>
         </div>
         <div class="tl-item">
@@ -421,7 +429,7 @@
         <span class="skill-tag">UI Design</span>
         <span class="skill-tag">Wireframing</span>
         <span class="skill-tag">Prototyping</span>
-        <span class="skill-tag">UX Research</span>
+        <!-- <span class="skill-tag">UX Research</span> -->
         <span class="skill-tag">Visual Design</span>
         <span class="skill-tag">Design Systems</span>
       </div>
@@ -432,6 +440,8 @@
       <div class="skill-tags">
         <span class="skill-tag">Figma</span>
         <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">VS Code</span>
         <span class="skill-tag">Photoshop</span>
       </div>
     </div>
@@ -442,7 +452,6 @@
         <span class="skill-tag">HTML5</span>
         <span class="skill-tag">CSS3</span>
         <span class="skill-tag">Bootstrap</span>
-        <span class="skill-tag">Git</span>
         <span class="skill-tag">Responsive</span>
         <span class="skill-tag">JavaScript</span>
       </div>
@@ -456,45 +465,56 @@
   <h2 class="section-title reveal">MY PROJECTS</h2>
   <!--   -->
   <div class="projects-grid">
-    <div class="proj-card featured reveal">
-      <a href="https://drive.google.com/drive/folders/1padZj4n3uVD0PtZaraLZTbexX3ESej-i?usp=sharing" class="proj-link"></a>
-      <img src="assets/Canva.jpeg" alt="canva" style="width: 465px; height: 280px; object-fit: cover;"/>
-      <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>   
-      <div class="proj-overlay">
-        <div class="proj-name">Canva Posters</div>
-        <a href="https://drive.google.com/drive/folders/1padZj4n3uVD0PtZaraLZTbexX3ESej-i?usp=sharing" class="proj-link">View More</a>
+    <a href="https://drive.google.com/drive/folders/1padZj4n3uVD0PtZaraLZTbexX3ESej-i?usp=sharing" 
+        target="_blank" style="text-decoration:none; display:block;">
+      <div class="proj-card featured reveal">
+        <img src="assets/Canva.jpeg" alt="canva" style="width:465px; height:280px; object-fit:cover;"/>
+        <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>
+        <div class="proj-overlay">
+          <div class="proj-name color-white">Canva Posters</div>
+          <span class="proj-link">View More</span>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="proj-card reveal">
-      <img src="assets/web.png" alt="web" style="width: 465px; height: 280px; object-fit: cover;"/>
-      <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>
-      <div class="proj-overlay">
-        <div class="proj-name">Web Designs</div>
-        <div class="proj-desc">Modern shopping experience with intuitive navigation and clean product pages.</div>
-        <a href="https://drive.google.com/drive/folders/1Qtc8E7TnzHiMoRPsIur3-9YAKalEFP0i?usp=sharing" class="proj-link">View More</a>
+    <a href="https://drive.google.com/drive/folders/1Qtc8E7TnzHiMoRPsIur3-9YAKalEFP0i?usp=sharing" 
+   target="_blank" style="text-decoration:none; display:block;">
+      <div class="proj-card reveal">
+        <img src="assets/web.png" alt="web" style="width:465px; height:280px; object-fit:cover;"/>
+        <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>
+        <div class="proj-overlay">
+          <div class="proj-name">Web Designs</div>
+          <div class="proj-desc">Modern shopping experience with intuitive navigation and clean product pages.</div>
+          <span class="proj-link">View More</span>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="proj-card reveal">
-      <img src="assets/ui.png" alt="ui" style="width: 465px; height: 280px; object-fit: cover;"/>
-      <div class="proj-bg" style="background:linear-gradient(135deg,#0f0f1a,#0a0a20)"></div>
-      <div class="proj-overlay">
-        <div class="proj-name">UI Designs</div>
-        <div class="proj-desc">Data visualization dashboard with dark theme and real-time metrics display.</div>
-        <a href="https://drive.google.com/drive/folders/1nWzNpfuI3308B1HgFWEDHxtTcI5JSNAK?usp=sharing" class="proj-link">View More</a>
+    <a href="https://drive.google.com/drive/folders/1nWzNpfuI3308B1HgFWEDHxtTcI5JSNAK?usp=sharing" 
+      target="_blank" style="text-decoration:none; display:block;">
+      <div class="proj-card reveal">
+        <img src="assets/ui.png" alt="ui" style="width:465px; height:280px; object-fit:cover;"/>
+        <div class="proj-bg" style="background:linear-gradient(135deg,#0f0f1a,#0a0a20)"></div>
+        <div class="proj-overlay">
+          <div class="proj-name">UI Designs</div>
+          <div class="proj-desc">Data visualization dashboard with dark theme and real-time metrics display.</div>
+          <span class="proj-link">View More</span>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="proj-card reveal">
-      <img src="assets/logo.png" alt="logo" style="width: 465px; height: 280px; object-fit: cover;"/>
-      <div class="proj-bg" style="background:linear-gradient(135deg,#0a180a,#0f1a0f)"></div>
-      <div class="proj-overlay">
-        <div class="proj-name">Logo Designs</div>
-        <div class="proj-desc">Clean, minimal mobile interface with smooth user flow and accessible design.</div>
-        <a href="https://drive.google.com/drive/folders/1zTHCTEg3FRlKc76BkHpp3S4AhQ2haKHV?usp=sharing" class="proj-link">View More</a>
+    <a href="https://drive.google.com/drive/folders/1zTHCTEg3FRlKc76BkHpp3S4AhQ2haKHV?usp=sharing" 
+      target="_blank" style="text-decoration:none; display:block;">
+      <div class="proj-card reveal">
+        <img src="assets/logo.png" alt="logo" style="width:465px; height:280px; object-fit:cover;"/>
+        <div class="proj-bg" style="background:linear-gradient(135deg,#0a180a,#0f1a0f)"></div>
+        <div class="proj-overlay">
+          <div class="proj-name">Logo Designs</div>
+          <div class="proj-desc">Clean, minimal mobile interface with smooth user flow and accessible design.</div>
+          <span class="proj-link">View More</span>
+        </div>
       </div>
-    </div>
+    </a>
     <!-- <div class="proj-card reveal" style="background:var(--yellow); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;">
       <div style="font-family:var(--font-display); font-size:3.5rem; color:var(--black); opacity:0.15; position:absolute;">✦</div>
       <div style="font-size:2rem;">🔍</div>
@@ -560,46 +580,71 @@
             <div class="cl-value">atmakuruvaishnavi@gmail.com</div>
           </div>
         </a>
-        <a href="#" class="contact-link-item">
+        <a href="https://www.linkedin.com/in/vaishnavi-atmakuru-7501a71a9/" class="contact-link-item" target="_blank">
           <div class="cl-icon">in</div>
           <div>
             <div class="cl-label">LinkedIn</div>
-            <div class="cl-value">linkedin.com/in/vaishnavi</div>
+            <div class="cl-value">vaishnavi-atmakuru</div>
           </div>
         </a>
       </div>
     </div>
-    <div class="contact-form reveal">
+
+    <!-- FORM WITH NETLIFY -->
+    <form name="contact" method="POST" data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form reveal"
+      onsubmit="handleSubmit(event)">
+
+      <!-- Spam protection (hidden) -->
+      <input type="hidden" name="form-name" value="contact"/>
+      <p style="display:none;"><input name="bot-field"/></p>
+
       <div class="form-row">
         <div class="form-group">
           <label>Name</label>
-          <input type="text" placeholder="Your name"/>
+          <input type="text" name="name" placeholder="Your name" required/>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="your@email.com"/>
+          <input type="email" name="email" placeholder="your@email.com" required/>
         </div>
       </div>
       <div class="form-group">
         <label>Subject</label>
-        <input type="text" placeholder="Project inquiry"/>
+        <input type="text" name="subject" placeholder="Project inquiry" required/>
       </div>
       <div class="form-group">
         <label>Message</label>
-        <textarea placeholder="Tell me about your project..."></textarea>
+        <textarea name="message" placeholder="Tell me about your project..." required></textarea>
       </div>
-      <button class="btn-send">Send Message →</button>
-    </div>
+      <button type="submit" class="btn-send" id="submitBtn">Send Message →</button>
+
+      <!-- Success message (hidden by default) -->
+      <div id="successMsg" style="
+        display:none;
+        margin-top:16px;
+        padding:16px 20px;
+        background:rgba(232,255,49,0.1);
+        border:1px solid rgba(232,255,49,0.3);
+        font-family:var(--font-mono);
+        font-size:0.75rem;
+        letter-spacing:2px;
+        color:var(--yellow);
+        text-transform:uppercase;
+      ">✓ Message sent! I'll get back to you soon.</div>
+
+    </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">ATMAKURU VAISHNAVI</div>
-  <div class="footer-copy">© 2026 Vaishnavi — UI Designer</div>
+  <div class="footer-logo">ATMAKURU VAISHNAVI<span>.</span></div>
+  <div class="footer-copy">© 2026 Vaishnavi — UI/Web Designer</div>
   <div class="footer-socials">
-    <a href="https://www.linkedin.com/in/vaishnavi-atmakuru-7501a71a9/" class="social-btn">in</a>
-    <a href="atmakuruvaishnavi@gmail.com" class="social-btn">✉</a>
+    <a href="https://www.linkedin.com/in/vaishnavi-atmakuru-7501a71a9/" class="social-btn" target="_blank">in</a>
+    <a href="mailto:atmakuruvaishnavi@gmail.com" class="social-btn">✉</a>
   </div>
 </footer>
 
