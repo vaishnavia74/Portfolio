@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vaishnavi — UI/UX Designer</title>
+<title>Vaishnavi — UI/Web Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -19,7 +19,7 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: var(--black); color: var(--white); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
+  body { color: var(--white); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
 
   .cursor { width: 12px; height: 12px; background: var(--yellow); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; mix-blend-mode: difference; }
   .cursor-ring { width: 36px; height: 36px; border: 1.5px solid var(--yellow); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform 0.25s ease, width 0.25s, height 0.25s; opacity: 0.6; }
@@ -33,7 +33,7 @@
   .nav-links a:hover { color: var(--yellow); }
   .nav-links a:hover::after { width: 100%; }
 
-  #home { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; padding-top: 80px; }
+  #home { background: linear-gradient(447deg, #000000, #004f4a, #013500); min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; padding-top: 80px; }
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px; position: relative; z-index: 2; }
   .hero-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
   .hero-tag::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--yellow); }
@@ -48,7 +48,7 @@
   .btn-outline { background: transparent; color: var(--white); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; padding: 13px 30px; border: 1px solid rgba(255,255,255,0.25); cursor: none; text-decoration: none; transition: border-color 0.2s, color 0.2s; display: inline-block; }
   .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
   .hero-right { position: relative; overflow: hidden; }
-  .hero-img-placeholder { width: 100%; height: 100%; background: linear-gradient(rgba(0, 0, 0, -0.4), rgba(0, 0, 0, 0.6)), url('assets/yel.png') no-repeat center / cover; display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
   .hero-initials { font-family: var(--font-display); font-size: 18rem; color: rgba(232,255,49,0.06); letter-spacing: -10px; user-select: none; position: absolute; }
   .hero-card { background: var(--gray); border: 1px solid rgba(255,255,255,0.08); padding: 32px; width: 260px; position: relative; z-index: 2; }
   .hero-card-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--yellow); line-height: 1; }
@@ -61,13 +61,21 @@
   .scroll-line::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--yellow); animation: slideline 2s infinite; }
   @keyframes slideline { 0% { left: -100%; } 100% { left: 100%; } }
 
-  section { padding: 100px 60px; }
+  /* Ring animation on load */
+  @keyframes ringFill {
+    from { stroke-dasharray: 0 314; }
+  }
+  .hero-right svg circle:last-child {
+    animation: ringFill 1.5s ease forwards;
+  }
+
+  section { padding: 90px 60px; }
   .section-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
   .section-label::before { content: ''; width: 20px; height: 1px; background: var(--yellow); }
   .section-title { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 5rem); letter-spacing: 2px; line-height: 1; margin-bottom: 60px; }
 
-  #about { background: var(--black); }
-  #Awards { background: #0d0d0d; }
+  #about {background: var(--gray);}
+  #Awards { background: linear-gradient(447deg, #000000, #004f4a, #013500); }
 
   .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
   .about-img-wrap { position: relative; }
@@ -156,8 +164,8 @@
     font-size: 1rem;
     letter-spacing: 2px;
   }
-  
-  #skills { background: var(--black); }
+
+  #skills { background: var(--gray); }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .skill-card { background: var(--gray); padding: 40px 36px; border: 1px solid rgba(255,255,255,0.04); transition: background 0.3s, transform 0.3s; position: relative; overflow: hidden; }
   .skill-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--yellow); transition: height 0.4s; }
@@ -169,7 +177,7 @@
   .skill-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 12px; background: rgba(255,255,255,0.06); color: var(--muted); border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
   .skill-card:hover .skill-tag { background: rgba(232,255,49,0.08); border-color: rgba(232,255,49,0.2); color: var(--yellow); }
 
-  #projects { background: #0d0d0d; }
+  #projects { background: linear-gradient(447deg, #000000, #004f4a, #013500); }
   .projects-filter { display: flex; gap: 2px; margin-bottom: 60px; }
   .filter-btn { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; padding: 10px 20px; background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,0.1); cursor: none; transition: all 0.2s; }
   .filter-btn.active, .filter-btn:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
@@ -187,7 +195,7 @@
   .proj-link:hover::after { transform: translateX(4px); }
   .proj-card.featured { grid-column: span 1; }
 
-  #process { background: var(--black); }
+  #process { background: var(--gray); }
   .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
   .process-step { background: var(--gray); padding: 40px 28px; position: relative; border: 1px solid rgba(255,255,255,0.04); }
   .step-num { font-family: var(--font-display); font-size: 4rem; color: rgba(232,255,49,0.12); line-height: 1; margin-bottom: 16px; }
@@ -195,7 +203,7 @@
   .step-desc { font-size: 0.8rem; line-height: 1.6; color: var(--muted); }
   .step-icon { font-size: 1.5rem; margin-bottom: 12px; }
 
-  #contact { background: #0d0d0d; }
+  #contact { background: linear-gradient(447deg, #000000, #004f4a, #013500); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .contact-info h2 { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 5rem); letter-spacing: 2px; line-height: 1; margin-bottom: 24px; }
   .contact-info h2 .outline { -webkit-text-stroke: 1.5px var(--white); color: transparent; }
@@ -265,6 +273,7 @@
     <li><a href="#projects">Work</a></li>
     <li><a href="#Awards">Achievements</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -278,7 +287,7 @@
       <div class="filled">ATMAKURU VAISHNAVI</div>
     </div>
     <div class="hero-role">I'M A UI/Web DESIGNER</div>
-    <p class="hero-desc">Designing clean, user-friendly digital experiences — where research meets pixel-perfect execution.</p>
+    <p class="hero-desc">Designing visually compelling and user-friendly interfaces that balance aesthetics, functionality, and exceptional user experiences.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Work</a>
       <a href="#contact" class="btn-outline">Contact Me</a>
@@ -288,28 +297,90 @@
       Scroll to explore
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-img-placeholder">
-          <!-- <img src="assets/bg1.png" alt="bg1" style="height: 677px; width: 500px; object-fit: cover;"/> -->
-      <div class="dot-grid" id="dotGrid"></div>
-      <!-- <div class="hero-initials">V</div> -->
-      <div class="hero-card">
-        <div class="hero-card-num">10+</div>
-        <div class="hero-card-label">Ui Screens</div>
-      </div>
-    <div class="hero-card" style="margin-left: 8px; position: relative; top: -30%;">
-          <div class="hero-card-num">10+</div>
-          <div class="hero-card-label">Web Designs</div>
+
+  <!-- HERO RIGHT -->
+<div class="hero-right">
+  <div class="hero-img-placeholder">
+    <div class="dot-grid" id="dotGrid"></div>
+    <div class="hero-initials">V</div>
+
+    <!-- CIRCULAR RING STATS -->
+    <div style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 40px;
+      position: relative;
+      z-index: 2;
+    ">
+
+      <!-- Web Designs -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <div style="position:relative; width:120px; height:120px;">
+          <svg width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top:0; left:0; transform:rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ff31" stroke-width="5"
+              stroke-dasharray="275 314" stroke-linecap="round"
+              style="transition: stroke-dasharray 1.5s ease;"/>
+          </svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#e8ff31; line-height:1;">10+</div>
+          </div>
         </div>
-    </div>
-      <div class="hero-stats">
-        <div class="hero-card" style="margin-left:8px">
-          <div class="hero-card-num">3+</div>
-          <div class="hero-card-label">Canva Designs</div>
-        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:#666; text-align:center;">Web Designs</div>
       </div>
+
+      <!-- UI Screens -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <div style="position:relative; width:120px; height:120px;">
+          <svg width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top:0; left:0; transform:rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ff31" stroke-width="5"
+              stroke-dasharray="250 314" stroke-linecap="round"
+              style="transition: stroke-dasharray 1.5s ease;"/>
+          </svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#e8ff31; line-height:1;">10+</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:#666; text-align:center;">UI Screens</div>
+      </div>
+
+      <!-- Canva Designs -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <div style="position:relative; width:120px; height:120px;">
+          <svg width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top:0; left:0; transform:rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ff31" stroke-width="5"
+              stroke-dasharray="160 314" stroke-linecap="round"
+              style="transition: stroke-dasharray 1.5s ease;"/>
+          </svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#e8ff31; line-height:1;">3+</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:#666; text-align:center;">Canva Designs</div>
+      </div>
+
+      <!-- National Award -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <div style="position:relative; width:120px; height:120px;">
+          <svg width="120" height="120" viewBox="0 0 120 120" style="position:absolute; top:0; left:0; transform:rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ff31" stroke-width="5"
+              stroke-dasharray="314 314" stroke-linecap="round"
+              style="transition: stroke-dasharray 1.5s ease;"/>
+          </svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#e8ff31; line-height:1;">1</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:#666; text-align:center;">National Award</div>
+      </div>
+
     </div>
   </div>
+</div>
 </section>
 
 <!-- TICKER -->
@@ -335,7 +406,7 @@
 </div>
 
 <!-- ABOUT -->
-<section id="about" style="padding: 100px 105px;">
+<section id="about" style="padding: 90px 105px;">
   <!-- <div class="about-grid">   </div> -->
     <!-- <div class="about-img-wrap reveal">
       <div class="about-img-box">V</div>
@@ -369,6 +440,10 @@
           </div>
         </div>
       </div>
+      <!-- ADD THIS AFTER TIMELINE -->
+        <a href="https://drive.google.com/file/d/1jIvSjPbK_1i_v3lcEOdejteKNtApGnDO/view?usp=sharing" target="_blank" 
+          class="btn-primary" style="display:inline-block;">Download Resume ↓
+        </a>
     </div>
   </div>
 </section>
@@ -420,7 +495,7 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-label reveal">What I do</div>
-  <h2 class="section-title reveal">SKILLS &amp;<br>TOOLS</h2>
+  <h2 class="section-title reveal">SKILLS & TOOLS</h2>
   <div class="skills-grid">
     <div class="skill-card reveal">
       <div class="skill-icon">🎨</div>
@@ -472,6 +547,7 @@
         <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>
         <div class="proj-overlay">
           <div class="proj-name color-white">Canva Posters</div>
+          <div class="proj-desc">Designed professional posters, banners, and marketing creatives using Canva's design tools.</div>
           <span class="proj-link">View More</span>
         </div>
       </div>
@@ -480,7 +556,7 @@
     <a href="https://drive.google.com/drive/folders/1Qtc8E7TnzHiMoRPsIur3-9YAKalEFP0i?usp=sharing" 
    target="_blank" style="text-decoration:none; display:block;">
       <div class="proj-card reveal">
-        <img src="assets/web.png" alt="web" style="width:465px; height:280px; object-fit:cover;"/>
+        <img src="assets/web.png" alt="web" style="width:465px; height:280px;"/>
         <div class="proj-bg" style="background:linear-gradient(135deg,#1a1010,#200a0a)"></div>
         <div class="proj-overlay">
           <div class="proj-name">Web Designs</div>
@@ -531,7 +607,7 @@
   <div class="process-steps">
     <div class="process-step reveal">
       <div class="step-num">01</div>
-      <div class="step-icon">🔍</div>
+      <div class="step-icon">🧩</div>
       <div class="step-title">RESEARCH</div>
       <div class="step-desc">Understanding users, goals, pain points, and competitive landscape before touching any design tool.</div>
     </div>
@@ -562,6 +638,23 @@
   </div>
 </section>
 
+<!-- RESUME -->
+<section id="resume" style="background:#0d0d0d; text-align:center;"> 
+  <div class="section-label" style="justify-content:center;">My Resume</div>
+  <h2 class="section-title">DOWNLOAD<br>RESUME</h2>
+  <p style="color:var(--muted); font-size:0.9rem; margin-bottom:40px; max-width:400px; margin-left:auto; margin-right:auto;">
+    Get a detailed overview of my skills, experience, and projects in one document.
+  </p>
+  <a href="https://drive.google.com/file/d/1jIvSjPbK_1i_v3lcEOdejteKNtApGnDO/view?usp=sharing" download="Vaishnavi_Resume.pdf" class="btn-primary"
+     target="_blank" style="font-size:0.85rem; padding:16px 48px;">
+    Download Resume ↓
+  </a>
+  <p style="color:var(--muted); font-family:var(--font-mono); 
+             font-size:0.65rem; letter-spacing:2px; margin-top:16px;">
+    PDF FORMAT · UPDATED 2026
+  </p>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
@@ -573,7 +666,8 @@
       </div>
       <p>Have a project in mind? Want to collaborate? Or just want to say hi? I'm always open to new opportunities and conversations.</p>
       <div class="contact-links">
-        <a href="mailto:atmakuruvaishnavi@gmail.com" class="contact-link-item">
+        <a href="https://mail.google.com/mail/?view=cm&to=atmakuruvaishnavi@gmail.com" 
+          class="contact-link-item" target="_blank">
           <div class="cl-icon">✉</div>
           <div>
             <div class="cl-label">Email</div>
@@ -641,11 +735,11 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">ATMAKURU VAISHNAVI<span>.</span></div>
-  <div class="footer-copy">© 2026 Vaishnavi — UI/Web Designer</div>
+  <div class="footer-copy">© 2025 Vaishnavi — UI/Web Designer</div>
   <div class="footer-socials">
     <a href="https://www.linkedin.com/in/vaishnavi-atmakuru-7501a71a9/" class="social-btn" target="_blank">in</a>
-    <a href="mailto:atmakuruvaishnavi@gmail.com" class="social-btn">✉</a>
-  </div>
+    <a href="https://mail.google.com/mail/?view=cm&to=atmakuruvaishnavi@gmail.com" 
+      class="social-btn" target="_blank">✉</a>  </div>
 </footer>
 
 <script>
